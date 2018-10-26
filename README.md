@@ -13,6 +13,8 @@
 ## Installation
 
 - Edit `.env` and set your database connection details
+- `composer install`
+- `php artisan key:generate`
 - `php artisan migrate`
 - `yarn` / `npm install`
 
