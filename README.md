@@ -3,12 +3,12 @@
 ## Features
 
 - Laravel 5.6 
-- Vue + VueRouter + Vuex + VueI18n + ESlint
+- Vue + VueRouter + Vuex
 - Pages with dynamic import and custom layouts
 - Login, register and password reset
 - Authentication with JWT
 - Socialite integration
-- Bootstrap 4 + Font Awesome 5
+- Bootstrap 4
 
 ## Installation
 
