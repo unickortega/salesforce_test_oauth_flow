@@ -7,7 +7,6 @@
 - Pages with dynamic import and custom layouts
 - Login, register and password reset
 - Authentication with JWT
-- Socialite integration
 - Bootstrap 4
 
 ## Installation
