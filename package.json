@@ -20,6 +20,7 @@
         "vue": "^2.5.17"
     },
     "dependencies": {
+        "js-cookie": "^2.2.0",
         "vform": "^1.0.0",
         "vue-loader": "^15.4.2",
         "vuex": "^3.0.1"
