@@ -1,4 +1,8 @@
 const mix = require('laravel-mix');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const path = require('path')
+
+mix.config.vue.esModule = true
 
 /*
  |--------------------------------------------------------------------------
@@ -12,4 +16,24 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css');
+   .sass('resources/sass/app.scss', 'public/css')
+   .sourceMaps()
+  .disableNotifications()
+
+
+mix.webpackConfig({
+    plugins: [
+        // make sure to include the plugin!
+        new VueLoaderPlugin()
+    ],
+    resolve: {
+        extensions: ['.js', '.json', '.vue'],
+        alias: {
+        '~': path.join(__dirname, './resources/js')
+        }
+    },
+    output: {
+        chunkFilename: 'js/[name].[chunkhash].js',
+        publicPath: mix.config.hmr ? '//localhost:8080' : '/'
+    }
+})

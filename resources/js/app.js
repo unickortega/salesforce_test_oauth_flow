@@ -7,7 +7,8 @@
 
 require('./bootstrap');
 
-window.Vue = require('vue');
+import Vue from 'vue'
+import store from '~/store'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -16,7 +17,20 @@ window.Vue = require('vue');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component(
+    'passport-clients',
+    require('./components/passport/Clients.vue')
+)
+Vue.component(
+    'password-authorized-clients',
+    require('./components/passport/AuthorizedClients.vue')
+)
+Vue.component(
+    'passport-personal-access-tokens',
+    require('./components/passport/PersonalAccessTokens.vue')
+)
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    store,
 });
