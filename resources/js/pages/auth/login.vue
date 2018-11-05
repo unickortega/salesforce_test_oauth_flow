@@ -35,6 +35,7 @@ export default {
         }),
         remember: false,
     }),
+    layout: 'basic',
     methods: {
         async login(){
             const {data} = await this.form.post('/api/login').catch(err => {
@@ -43,7 +44,6 @@ export default {
                 }
             })
 
-            console.log(this.$store)
             // save token
             this.$store.dispatch('saveToken', {
                 token: data.token,
@@ -53,7 +53,8 @@ export default {
             // fetch user
             await this.$store.dispatch('fetchUser')
 
-            console.log(this.$store)
+            // redirect to user dashboard
+            this.$router.push({ name: 'dashboard' })
         }
     }
 }

@@ -21,9 +21,23 @@ const layouts = requireContext.keys()
 export default {
   el: '#app',
   data: () => ({
-    layout: layouts['basic'],
+    layout: null,
     defaultLayout: 'default'
   }),
+  methods: {
+    /**
+     * Set the application layout.
+     *
+     * @param {String} layout
+     */
+    setLayout (layout) {
+      if (!layout || !layouts[layout]) {
+        layout = this.defaultLayout
+      }
+
+      this.layout = layouts[layout]
+    }
+  }
 }
 </script>
 

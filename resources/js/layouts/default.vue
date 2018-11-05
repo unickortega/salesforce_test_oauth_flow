@@ -1,16 +1,16 @@
 <template>
-  <div class="basic-layout d-flex align-items-center justify-content-center m-0 bg-white">
-    <nav/>
+  <div>
+    <navigation/>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import nav from './components/default-nav'
+import navigation from './components/default-nav'
 export default {
   name: 'DefaultLayout',
   components: {
-    nav
+    navigation
   }
 }
 </script>

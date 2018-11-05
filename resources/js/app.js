@@ -20,8 +20,6 @@ import './plugins'
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-console.log(store)
-
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 new Vue({
     store,

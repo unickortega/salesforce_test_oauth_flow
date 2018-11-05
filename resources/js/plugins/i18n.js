@@ -24,7 +24,7 @@ export async function loadMessages (locale) {
 }
 
 ;(async function () {
-  await loadMessages(store.getters['lang/locale'])
+  await loadMessages(store.getters['locale'])
 })()
 
 export default i18n
