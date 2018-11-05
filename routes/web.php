@@ -11,9 +11,12 @@
 |
 */
 
-Route::get('/', function () {
+/**
+ * Receive all incoming urls
+ */
+Route::get('{path}', function () {
     return view('welcome');
-});
+})->where('path', '(.*)');
 
 // Auth::routes();
 

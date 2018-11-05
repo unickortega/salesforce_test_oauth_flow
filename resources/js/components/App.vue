@@ -1,13 +1,29 @@
 <template>
-  <div id="app">
-    <router-view/>
-  </div>
+    <div id="app">
+        <component v-if="layout" :is="layout"></component>
+    </div>
 </template>
 
 <script>
 
+// Load layout components dynamically.
+const requireContext = require.context('~/layouts', false, /.*\.vue$/)
+
+const layouts = requireContext.keys()
+  .map(file =>
+    [file.replace(/(^.\/)|(\.vue$)/g, ''), requireContext(file)]
+  )
+  .reduce((components, [name, component]) => {
+    components[name] = component.default || component
+    return components
+  }, {})
+
 export default {
   el: '#app',
+  data: () => ({
+    layout: layouts['basic'],
+    defaultLayout: 'default'
+  }),
 }
 </script>
 
