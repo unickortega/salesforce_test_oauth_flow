@@ -8,6 +8,7 @@
 
 import Welcome from '~/pages/welcome'
 import Login from '~/pages/auth/login'
+import Register from '~/pages/auth/register'
 import Dashboard from '~/pages/dashboard/index'
 
 export default [
@@ -15,5 +16,6 @@ export default [
 
     // auth routes
     { path: '/login', name: 'login', component: Login },
+    { path: '/register', name: 'register', component: Register },
     { path: '/dashboard', name: 'dashboard', component: Dashboard }
 ]

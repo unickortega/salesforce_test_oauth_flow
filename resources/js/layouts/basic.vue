@@ -1,14 +1,19 @@
 <template>
-  <div class="basic-layout d-flex align-items-center justify-content-center m-0 bg-white">
-    <router-link :to="{ name:'welcome' }">Home</router-link>
-    <router-link :to="{ name:'login' }">Login</router-link>
-    <router-view></router-view>
+  <div>
+    <navigation/>
+    <div class="basic-layout d-flex align-items-center justify-content-center m-0 bg-white">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script>
+import navigation from './components/navigation'
 export default {
   name: 'BasicLayout',
+  components: {
+    navigation
+  }
 }
 </script>
 

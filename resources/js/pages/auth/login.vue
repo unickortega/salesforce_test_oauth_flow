@@ -5,7 +5,8 @@
             <form @submit.prevent="login" @keydown="form.onKeydown($event)">
                 <div class="absolute-center w-100 p-3" style="max-width:400px;">
                     <div class="text-center">
-                    <blockquote style="font-size:12px; margin-top:10px;">Welcome back! Please login to your account.</blockquote>
+                    <strong>Sign In</strong>
+                    <div>Welcome back! Please login to your account.</div>
                     </div>
                     <div class="form-group">
                         <label>Email</label>
@@ -35,6 +36,7 @@ export default {
         }),
         remember: false,
     }),
+    middleware: 'guest',
     layout: 'basic',
     methods: {
         async login(){

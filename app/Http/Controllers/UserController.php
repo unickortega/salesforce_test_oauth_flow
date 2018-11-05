@@ -32,12 +32,14 @@ class UserController extends Controller
      */ 
     public function register(Request $request) 
     { 
-        $validator = Validator::make($request->all(), [ 
+        $this->validate($request, [ 
             'name' => 'required', 
             'email' => 'required|email', 
             'password' => 'required', 
-            'c_password' => 'required|same:password', 
-        ]);
+            'c_password' => 'same:password',
+        ],
+        ['c_password' => 'Password must match.']
+        );
         if ($validator->fails()) { 
             return response()->json(['error'=>$validator->errors()], 401);            
         }
