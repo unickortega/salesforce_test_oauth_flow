@@ -15,7 +15,7 @@
  * Receive all incoming urls
  */
 Route::get('{path}', function () {
-    return view('welcome');
+    return view('index');
 })->where('path', '(.*)');
 
 // Auth::routes();

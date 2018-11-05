@@ -20,7 +20,7 @@ export const getters = {
 export const mutations = {
     [types.SAVE_TOKEN] (state, {token, remember}){
         state.token = token
-        Cookies.set('token', token)
+        Cookies.set('token', token, { expires: remember ? 365 : null })
     },
 
     [types.FETCH_USER_SUCCESS] (state, {user}) {
@@ -46,12 +46,12 @@ export const mutations = {
 // actions
 export const actions = {
     saveToken ({commit, dispatch}, payload){
-        commit(type.SAVE_TOKEN, payload)
+        commit(types.SAVE_TOKEN, payload)
     },
     async fetchUser({commit}){
         try{
             const {data} = await axios.get('/api/user')
-            commit(types.FETCH_USER_SUCCESS, {user: data})
+            commit(types.FETCH_USER_SUCCESS, {user: data.user})
         }
         catch(e){
             commit(types.FETCH_USER_FAILURE)
