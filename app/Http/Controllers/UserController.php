@@ -34,15 +34,11 @@ class UserController extends Controller
     { 
         $this->validate($request, [ 
             'name' => 'required', 
-            'email' => 'required|email', 
-            'password' => 'required', 
-            'c_password' => 'same:password',
-        ],
-        ['c_password' => 'Password must match.']
+            'email' => 'required|email|max:255|unique:users', 
+            'password' => 'required|min:6|confirmed', 
+        ]
         );
-        if ($validator->fails()) { 
-            return response()->json(['error'=>$validator->errors()], 401);            
-        }
+        
         $input = $request->all(); 
         $input['password'] = bcrypt($input['password']); 
         $user = User::create($input); 

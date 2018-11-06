@@ -17,7 +17,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Email</label>
-                        <input class="form-control" name="email" v-model="form.email" :class="{ 'is-invalid': form.errors.has('email') }">
+                        <input class="form-control" type="email" name="email" v-model="form.email" :class="{ 'is-invalid': form.errors.has('email') }">
                         <has-error :form="form" field="email"/>
                     </div>
                 </div>
@@ -31,8 +31,8 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Password</label>
-                        <input type="password" class="form-control" name="c_password" v-model="form.c_password" :class="{ 'is-invalid': form.errors.has('c_password') }">
-                        <has-error :form="form" field="c_password"/>
+                        <input type="password" class="form-control" name="password_confirmation" v-model="form.password_confirmation" :class="{ 'is-invalid': form.errors.has('password_confirmation') }">
+                        <has-error :form="form" field="password_confirmation"/>
                     </div>
                 </div>
             </div>
@@ -51,7 +51,7 @@ export default {
             name: '',
             email: '',
             password: '',
-            c_password: ''
+            password_confirmation: ''
         }),
         remember: false,
     }),
@@ -64,6 +64,18 @@ export default {
         async login(){
             console.log(this.form)
             const {data} = await this.form.post('/api/register')
+
+            // save token
+            this.$store.dispatch('saveToken', {
+                token: data.token,
+                remember: true
+            })
+
+            // fetch user
+            await this.$store.dispatch('fetchUser')
+
+            // redirect to user dashboard
+            this.$router.push({ name: 'dashboard' })
         }
     }
 }
