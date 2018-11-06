@@ -6,7 +6,7 @@
 - Vue + VueRouter + Vuex
 - Pages with dynamic import and custom layouts
 - Login, register and password reset
-- Authentication with JWT
+- Authentication with Laravel Passport
 - Bootstrap 4
 
 ## Installation
