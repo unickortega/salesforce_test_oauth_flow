@@ -10,7 +10,8 @@
                     </div>
                     <div class="form-group">
                         <label>Email</label>
-                        <input class="form-control" name="email" v-model="form.email">
+                        <input class="form-control" :class="{ 'is-invalid': form.errors.has('email') }" name="email" v-model="form.email">
+                        <has-error :form="form" field="email"/>
                     </div>
                     <div class="form-group">
                         <label>Password</label>
@@ -22,7 +23,9 @@
                         <router-link :to="{name:'password.forgot'}">Forgot password?</router-link>
                     </div>
                     <div>
-                        <button type="submit">Login</button>
+                        <v-button :loading="form.busy">
+                            Login
+                        </v-button>
                     </div>
                 </div>
             </form>

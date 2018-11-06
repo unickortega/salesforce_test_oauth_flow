@@ -22,7 +22,14 @@ class UserController extends Controller
             return response()->json(['status'=>'success','token'=>$user->createToken('MyApp')->accessToken], $this->successStatus); 
         } 
         else{ 
-            return response()->json(['error'=>'Unauthorised'], 401); 
+            return response()->json([
+                'errors' => [
+                    'email' => [
+                        'These credentials do not match our records.'
+                    ]
+                ],
+                'message' => 'The given data was invalid.'
+            ], 401); 
         } 
     }
 

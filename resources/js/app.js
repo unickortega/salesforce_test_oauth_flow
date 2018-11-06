@@ -12,8 +12,7 @@ import store from '~/store'
 import App from '~/components/App'
 import router from '~/router'
 
-import './plugins'
-
+import '~/plugins'
 import '~/components'
 
 /**
@@ -22,7 +21,6 @@ import '~/components'
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
 new Vue({
     store,
     router,

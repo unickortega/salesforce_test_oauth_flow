@@ -36,7 +36,9 @@
                     </div>
                 </div>
             </div>
-            <button type="submit">Submit</button>
+            <v-button :loading="form.busy">
+                Submit
+            </v-button>
         </form>
     </div>
   </div>

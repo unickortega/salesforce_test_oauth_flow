@@ -5,7 +5,7 @@
             <strong>Forgot password?</strong>
             <div>Please enter your email address. We send you an email to reset your password.</div>
         </div>
-        <alert-success :form="form" :message="status"/>
+        <alert-success :dismissible="false" :form="form" :message="status"/>
         <form @submit.prevent="submit" v-if="!status" @keydown="form.onKeydown($event)">
             <div class="row">
                 <div class="col-md-12">
@@ -16,7 +16,9 @@
                     </div>
                 </div>
             </div>
-            <button type="submit">Submit</button>
+            <v-button :loading="form.busy">
+                Submit
+            </v-button>
         </form>
     </div>
   </div>
@@ -24,7 +26,6 @@
 
 <script>
 import Form from 'vform'
-import HasError from '~/components/HasError'
 export default {
     data: () => ({
         status: '',
@@ -33,9 +34,6 @@ export default {
         }),
         remember: false,
     }),
-    components: {
-        HasError
-    },
     middleware: 'guest',
     layout: 'basic',
     methods: {
