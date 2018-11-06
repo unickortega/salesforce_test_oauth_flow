@@ -2,7 +2,9 @@
   <div>
     <navigation/>
     <div class="basic-layout d-flex align-items-center justify-content-center m-0 bg-white">
-      <router-view></router-view>
+      <transition name="page" mode="out-in">
+        <router-view></router-view>
+      </transition>
     </div>
   </div>
 </template>

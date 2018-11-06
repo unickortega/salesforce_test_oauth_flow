@@ -34,6 +34,7 @@ function createRouter(){
     })
 
     router.beforeEach(beforeEach)
+    router.afterEach(afterEach)
 
     return router
 }
@@ -50,9 +51,11 @@ async function beforeEach(to, from, next){
     const components = await resolveComponents(
         router.getMatchedComponents({ ...to })
     )
-    
-    // set application layout
-    router.app.setLayout(components[0].layout || '')
+
+    // Start the loading bar.
+    if (components[components.length - 1].loading !== false) {
+      router.app.$nextTick(() => router.app.$loading.start())
+    }
 
     // Get the middleware for all the matched components.
     const middleware = getMiddleware(components)
@@ -61,11 +64,24 @@ async function beforeEach(to, from, next){
     callMiddleware(middleware, to, from, async (...args) => {
         
         if (args.length === 0) {
-        router.app.setLayout(components[0].layout || '')
+          router.app.setLayout(components[0].layout || '')
         }
 
         next(...args)
     })
+}
+
+/**
+ * Global after hook.
+ *
+ * @param {Route} to
+ * @param {Route} from
+ * @param {Function} next
+ */
+async function afterEach (to, from, next) {
+  await router.app.$nextTick()
+
+  router.app.$loading.finish()
 }
 
 /**

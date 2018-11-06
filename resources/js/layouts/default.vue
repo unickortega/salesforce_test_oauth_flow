@@ -1,7 +1,11 @@
 <template>
   <div>
     <navigation/>
-    <router-view></router-view>
+    <transition name="page" mode="out-in">
+      <div class="container">
+        <router-view></router-view>
+      </div>
+    </transition>
   </div>
 </template>
 

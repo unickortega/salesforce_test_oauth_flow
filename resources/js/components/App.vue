@@ -1,10 +1,14 @@
 <template>
     <div id="app">
-        <component v-if="layout" :is="layout"></component>
+        <loading ref="loading"/>
+        <transition name="page" mode="out-in">
+            <component v-if="layout" :is="layout"></component>
+        </transition>
     </div>
 </template>
 
 <script>
+import Loading from './Loading'
 
 // Load layout components dynamically.
 const requireContext = require.context('~/layouts', false, /.*\.vue$/)
@@ -24,6 +28,9 @@ export default {
     layout: null,
     defaultLayout: 'default'
   }),
+  components: {
+    Loading
+  },
   methods: {
     /**
      * Set the application layout.
@@ -37,13 +44,20 @@ export default {
 
       this.layout = layouts[layout]
     }
-  }
+  },
+  mounted () {
+    this.$loading = this.$refs.loading
+  },
 }
 </script>
 
 <style lang="scss" scoped>
   .full-height {
       height: 100vh;
+  }
+
+  body{
+      background: white;
   }
 
   .flex-center {
