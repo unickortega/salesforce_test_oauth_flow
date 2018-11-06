@@ -52,6 +52,10 @@ async function beforeEach(to, from, next){
         router.getMatchedComponents({ ...to })
     )
 
+    if (components.length === 0) {
+      return next()
+    }
+
     // Start the loading bar.
     if (components[components.length - 1].loading !== false) {
       router.app.$nextTick(() => router.app.$loading.start())

@@ -9,6 +9,8 @@
 import Welcome from '~/pages/welcome'
 import Login from '~/pages/auth/login'
 import Register from '~/pages/auth/register'
+import PasswordReset from '~/pages/auth/password/reset'
+import PasswordForgot from '~/pages/auth/password/email'
 import Dashboard from '~/pages/dashboard/index'
 
 export default [
@@ -17,5 +19,7 @@ export default [
     // auth routes
     { path: '/login', name: 'login', component: Login },
     { path: '/register', name: 'register', component: Register },
-    { path: '/dashboard', name: 'dashboard', component: Dashboard }
+    { path: '/dashboard', name: 'dashboard', component: Dashboard },
+    { path: '/password/reset/:token', name: 'password.reset', component: PasswordReset },
+    { path: '/password/forgot', name: 'password.forgot', component: PasswordForgot }
 ]

@@ -25,6 +25,7 @@ class UserController extends Controller
             return response()->json(['error'=>'Unauthorised'], 401); 
         } 
     }
+
     /** 
      * Register api 
      * 
@@ -44,6 +45,7 @@ class UserController extends Controller
         $user = User::create($input); 
         return response()->json(['status'=>'success','token'=>$user->createToken('MyApp')->accessToken], $this->successStatus); 
     }
+    
     /** 
      * details api 
      * 

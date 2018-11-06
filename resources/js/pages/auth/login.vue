@@ -16,9 +16,14 @@
                         <label>Password</label>
                         <input type="password" class="form-control" name="password" v-model="form.password">
                     </div>
-                    <input type="checkbox" name="remember" v-model="remember"/>
-                    <label>remember</label>
-                    <button type="submit">Login</button>
+                    <input id="remember" type="checkbox" name="remember" v-model="remember"/>
+                    <label for="remember">remember</label>
+                    <div class="pull-right">
+                        <router-link :to="{name:'password.forgot'}">Forgot password?</router-link>
+                    </div>
+                    <div>
+                        <button type="submit">Login</button>
+                    </div>
                 </div>
             </form>
         </div>
@@ -61,47 +66,3 @@ export default {
     }
 }
 </script>
-
-<style lang="scss" scoped>
-  .full-height {
-      height: 100vh;
-  }
-
-  .flex-center {
-      align-items: center;
-      display: flex;
-      justify-content: center;
-  }
-
-  .position-ref {
-      position: relative;
-  }
-
-  .top-right {
-      position: absolute;
-      right: 10px;
-      top: 18px;
-  }
-
-  .content {
-      text-align: center;
-  }
-
-  .title {
-      font-size: 84px;
-  }
-
-  .links > a {
-      color: #636b6f;
-      padding: 0 25px;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: .1rem;
-      text-decoration: none;
-      text-transform: uppercase;
-  }
-
-  .m-b-md {
-      margin-bottom: 30px;
-  }
-</style>
