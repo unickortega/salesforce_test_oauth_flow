@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="basic-layout">
     <navigation/>
     <transition name="page" mode="out-in">
       <div class="container">
@@ -19,21 +19,10 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .basic-layout {
-  color: #636b6f;
-  height: 100vh;
-  font-weight: 100;
+  min-height: 100vh;
   position: relative;
-
-  .links > a {
-    color: #636b6f;
-    padding: 0 25px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: .1rem;
-    text-decoration: none;
-    text-transform: uppercase;
-  }
+  background: white;
 }
 </style>

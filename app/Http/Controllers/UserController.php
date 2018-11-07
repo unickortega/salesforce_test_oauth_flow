@@ -49,7 +49,12 @@ class UserController extends Controller
         
         $input = $request->all(); 
         $input['password'] = bcrypt($input['password']); 
-        $user = User::create($input); 
+        $user = User::create($input);
+
+        if($request->test){
+            return response()->json(['status'=>'success'], $this->successStatus); 
+        }
+
         return response()->json(['status'=>'success','token'=>$user->createToken('MyApp')->accessToken], $this->successStatus); 
     }
     
