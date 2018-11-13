@@ -131,7 +131,6 @@
                         <h4 class="modal-title">
                             Personal Access Token
                         </h4>
-
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
 
@@ -140,7 +139,6 @@
                             Here is your new personal access token. This is the only time it will be shown so don't lose it!
                             You may now use this token to make API requests.
                         </p>
-
                         <textarea class="form-control" rows="10">{{ accessToken }}</textarea>
                     </div>
 
