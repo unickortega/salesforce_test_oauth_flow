@@ -12,8 +12,14 @@
             </div>
         </div>
     </div>
+
+    <div class="flex-center position-ref full-height">
+        <h1>Sampl</h1>
+    </div>
+
   </div>
 </template>
+
 
 <script>
 

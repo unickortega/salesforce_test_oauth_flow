@@ -66,13 +66,12 @@ export default {
         async login(){
             console.log(this.form)
             const {data} = await this.form.post('/api/register')
-
             // save token
             this.$store.dispatch('saveToken', {
                 token: data.token,
                 remember: true
             })
-
+            
             // fetch user
             await this.$store.dispatch('fetchUser')
 

@@ -7,6 +7,7 @@
 
 
 import Welcome from '~/pages/welcome'
+import Home from '~/pages/home'
 import Login from '~/pages/auth/login'
 import Register from '~/pages/auth/register'
 import PasswordReset from '~/pages/auth/password/reset'
@@ -15,6 +16,7 @@ import Dashboard from '~/pages/dashboard/index'
 
 export default [
     { path: '/', name: 'welcome', component: Welcome },
+    { path: '/home', name: 'home', component: Home },
 
     // auth routes
     { path: '/login', name: 'login', component: Login },
