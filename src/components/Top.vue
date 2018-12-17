@@ -35,33 +35,18 @@
     </div>
     <br>
     <div class="d-flex flex-row-reverse">
-      <div class="p-2">
+      <div class="p-2" id="flexItem">
         <table class="table table-bordered">
-          <thead>
+          <tbody class="text-right">
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
+              <td>time</td>
+              <td>10:00:00</td>
+              <td rowspan="2" id="fontSize">Otto</td>
+              <td rowspan="2" id="fontSize">@mdo</td>
             </tr>
             <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td colspan="2">Larry the Bird</td>
-              <td>@twitter</td>
+              <td>time</td>
+              <td>5:00:00</td>
             </tr>
           </tbody>
         </table>
@@ -98,4 +83,10 @@ export default {
 </script>
 
 <style scoped>
+#flexItem{
+  width: 70%;
+}
+#fontSize{
+  font-size: 2.5rem;
+}
 </style>
