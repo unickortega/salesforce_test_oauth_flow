@@ -17,7 +17,7 @@
           <ul class="navbar-nav mr-auto">
           </ul>
           <div class="form-inline my-2 my-md-0">
-            <button class="btn btn-primary btn-sm mr-2" type="text" placeholder="Search">Click something here</button>
+            <button class="btn btn-primary btn-sm mr-2" type="text" placeholder="Search">Start working time</button>
             <img id="prof_img" src="../src/assets/echo.jpg" class="rounded-circle" alt="">
           </div>
         </div>
