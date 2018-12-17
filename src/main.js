@@ -4,6 +4,8 @@ import router from './router'
 import store from './store'
 import './registerServiceWorker'
 import BootstrapVue from 'bootstrap-vue'
+import Chart from 'chart.js'
+
 
 Vue.config.productionTip = false
 Vue.use(BootstrapVue);
