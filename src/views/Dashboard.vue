@@ -47,7 +47,7 @@
                     </b-row> -->
 
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                        <h1 class="h4">Contact/ Project</h1>
+                        <h1 class="h5">Customer/ Project</h1>
                         <div class="btn-toolbar mb-2 mb-md-0">
                             <div class="btn-group mr-2">
                                 <button class="btn btn-sm btn-outline-secondary">Start time</button>
@@ -79,10 +79,15 @@
                         <template slot="isActive" slot-scope="row">{{row.value?'Yes :)':'No :('}}</template>
                         <template slot="actions" slot-scope="row">
                             <!-- We use @click.stop here to prevent a 'row-clicked' event from also happening -->
-                            <b-button size="sm" @click.stop="info(row.item, row.index, $event.target)" class="mr-1">
-                                Info modal
-                            </b-button>
-                            <!-- <b-button size="sm" @click.stop="row.toggleDetails">
+                            <!-- <b-button size="sm" @click.stop="info(row.item, row.index, $event.target)" class="mr-1">
+                                Inqqasdfo modal
+                            </b-button> -->
+
+                            <font-awesome-icon @click.stop="info(row.item, row.index, $event.target)" class="mr-1"
+                                :icon="['fa', 'coffee']" />
+                            <!-- <font-awesome-icon :icon="['fa', 'coffee']" /> -->
+
+                            <!-- <b-button size="sm" :icon="['fas', 'spinner']" />:icon="['fas', 'spinner']" />@click.stop="row.toggleDetails">
                                 {{ row.detailsShowing ? 'Hide' : 'Show' }} Details
                             </b-button> -->
                         </template>
@@ -106,12 +111,10 @@
                         <pre>{{ modalInfo.content }}</pre>
                     </b-modal>
 
-
-
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                        <h1 class="h4 .d-none">Contact/ Project</h1>
+                        <h1 class="h4" style="visibility:hidden;">Customer/ Project</h1>
                         <div class="btn-toolbar mb-2 mb-md-0">
-                            
+
                             <div class="btn-group mr-2">
                                 <button class="btn btn-sm btn-primary">Create working report</button>
                             </div>
