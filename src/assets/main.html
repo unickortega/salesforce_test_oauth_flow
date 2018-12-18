@@ -46,7 +46,7 @@
             right:0px;
             top: 60px;
             background: #e7e7e7;
-            height: 90%;
+            height: 100%;
             width: 100px;
             z-index: 10;
         }
@@ -64,12 +64,26 @@
             position: fixed;;
             right:0px;
             top: 60px;
-            background: gray;
-            height: 90%;
+            background: #e7e7e7;
+            height: 100%;
             width: 250px;
             display: none;
 
         }
+        .sidebar-content-info{
+            position: fixed;;
+            right:100px;
+            top: 60px;
+            background: white;
+            height: 376px;
+            width: 240px;
+            /* display: none; */
+
+        }
+        .active{
+            background-color: white;
+        }
+
     </style>
 </head>
 
@@ -84,15 +98,25 @@
         </div>
     </div>
     <div class="sidebar">
-        <ul class="sidebar-item">
+        <ul class="sidebar-item" id="sidebarContainer">
             <li class="s-item" onclick="userFunction()"><i class="fa fa-user-cog fa-4x"></i></li>
             <li class="s-item" onclick="pageFunction()"><i class="fa fa-file-alt fa-4x"></i></li>
             <li class="s-item" onclick="resumeFunction()"><i class="fa fa-address-card fa-4x"></i></li>
-            <li class="s-item" onclick="userFunction()"><i class="fa fa-bell fa-4x"></i></li>
+            <li class="s-item" onclick="notifFunction()"><i class="fa fa-bell fa-4x"></i></li>
         </ul>
     </div>
     <div class="sidebar-content hidden" id="sidebarContent">
-        <p1>This is side bar section.</p1>
+        <div class="sidebar-content-info"><p>This is side bar section.</p></div>
+        
+    </div>
+    <div class="sidebar-content hidden" id="sidebarContent2">
+        <div class="sidebar-content-info"><p>This is side bar section.</p></div>            
+    </div>
+    <div class="sidebar-content hidden" id="sidebarContent3">
+        <div class="sidebar-content-info"><p>This is side bar section.</p></div>
+    </div>
+    <div class="sidebar-content hidden" id="sidebarContent4">
+        <div class="sidebar-content-info"><p>This is side bar section.</p></div> 
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -107,7 +131,9 @@
         if (x.style.display !== "block") {
         x.style.display = "block";
         var anim = $('.sidebar-content');
+        var anim2 = $('.sidebar-content-info');
         anim.animate({right: '100px'}, 'slow');
+        anim2.animate({right: '100px'}, 150);
         } else {
         var anim = $('.sidebar-content');
         anim.animate({right: '-'+anim.width()}, 'slow', function(){
@@ -116,7 +142,7 @@
         }
     }
     function pageFunction() {
-        var x = document.getElementById("sidebarContent");
+        var x = document.getElementById("sidebarContent2");
         if (x.style.display !== "block") {
         x.style.display = "block";
         var anim = $('.sidebar-content');
@@ -129,7 +155,7 @@
         }
     }
     function resumeFunction() {
-        var x = document.getElementById("sidebarContent");
+        var x = document.getElementById("sidebarContent3");
         if (x.style.display !== "block") {
         x.style.display = "block";
         var anim = $('.sidebar-content');
@@ -140,5 +166,38 @@
             anim.css({display: 'none'})
         });
         }
+    }
+    function notifFunction() {
+        var x = document.getElementById("sidebarContent4");
+        if (x.style.display !== "block") {
+        x.style.display = "block";
+        var anim = $('.sidebar-content');
+        anim.animate({right: '100px'}, 'slow');
+        } else {
+        var anim = $('.sidebar-content');
+        anim.animate({right: '-'+anim.width()}, 'slow', function(){
+            anim.css({display: 'none'})
+        });
+        }
+    }
+
+    // Get the container element
+    var listContainer = document.getElementById("sidebarContainer");
+
+    // Get all buttons with class="btn" inside the container
+    var lists = listContainer.getElementsByClassName("s-item");
+
+    // Loop through the buttons and add the active class to the current/clicked button
+    for (var i = 0; i < lists.length; i++) {
+    lists[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        // If there's no active class
+        if (current.length > 0) { 
+        current[0].className = current[0].className.replace(" active", "");
+        }
+
+        // Add the active class to the current/clicked button
+        this.className += " active";
+        });
     }
 </script>
