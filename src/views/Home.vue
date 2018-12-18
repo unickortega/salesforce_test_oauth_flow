@@ -3,22 +3,49 @@
     <!-- <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <div>
-      <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <a class="navbar-brand" href="#"><b>geechs</b> job</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
-          aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarsExample04">
-          <ul class="navbar-nav mr-auto">
-          </ul>
-          <div class="form-inline my-2 my-md-0">
-            <button class="btn btn-primary btn-sm mr-2" type="text" placeholder="Search">Start working time</button>
-            <img id="prof_img" src="../../src/assets/echo.jpg" class="rounded-circle" alt="">
+
+      <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          <a class="navbar-brand" href="#">Carousel</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+              </li>
+            </ul>
+            <form class="form-inline mt-2 mt-md-0">
+
+              <ul class="navbar-nav ml-md-auto d-md-flex">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Hasome
+                    <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Top Menu Items</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Pricing</a>
+                </li>
+              </ul>
+            </form>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </header>
+
+
+
       <main class="py-4">
         <div class="container-fluid">
           <div class="row">
@@ -66,6 +93,61 @@
 
   </div>
 </template>
+
+<style lang="scss">
+  #wrapper {
+    padding: 90px 15px;
+  }
+
+  .navbar-expand-lg .navbar-nav.side-nav {
+    flex-direction: column;
+  }
+
+  .card {
+    margin-bottom: 15px;
+    border-radius: 0;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .1);
+  }
+
+  .header-top {
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .1)
+  }
+
+  .leftmenutrigger {
+    display: none
+  }
+
+  @media(min-width:992px) {
+    .leftmenutrigger {
+      display: block;
+      display: block;
+      margin: 7px 20px 4px 0;
+      cursor: pointer;
+    }
+
+    #wrapper {
+      padding: 90px 15px 15px 15px;
+    }
+
+    .navbar-nav.side-nav.open {
+      left: 0;
+    }
+
+    .navbar-nav.side-nav {
+      background: #585f66;
+      box-shadow: 2px 1px 2px rgba(0, 0, 0, .1);
+      position: fixed;
+      top: 56px;
+      flex-direction: column !important;
+      left: -220px;
+      width: 200px;
+      overflow-y: auto;
+      bottom: 0;
+      overflow-x: hidden;
+      padding-bottom: 40px
+    }
+  }
+</style>
 
 <script>
   // @ is an alias to /src
