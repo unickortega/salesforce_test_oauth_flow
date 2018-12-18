@@ -1,11 +1,11 @@
 export const geechsChartData = {
   type: 'line',
   data: {
-    labels: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'],
+    labels: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h','a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'],
     datasets: [
       { // one line graph
         label: 'Hours',
-        data: [10, 18, 11, 12, 17, 15, 12, 14],
+        data: [10, 18, 11, 12, 17, 15, 12, 14,10, 18, 11, 12, 17, 15, 12, 14],
         fill: false,
         borderColor: 'rgb(75, 192, 192)',
         lineTension: 0.1,
