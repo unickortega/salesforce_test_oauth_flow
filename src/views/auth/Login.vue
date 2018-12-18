@@ -1,5 +1,3 @@
-// please refer to this link for the source of login https://startbootstrap.com/snippets/login/
-
 <template>
   <div class="container">
     <div class="row">
