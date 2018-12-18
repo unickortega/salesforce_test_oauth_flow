@@ -14,7 +14,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import Loading from '@/components/Loading'
 
 // Load layout components dynamically.
-const requireContext = require.context('~/layouts', false, /.*\.vue$/)
+const requireContext = require.context('@/layouts', false, /.*\.vue$/)
 
 const layouts = requireContext.keys()
   .map(file =>

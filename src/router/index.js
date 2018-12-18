@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import store from '~/store'
+import store from '@/store'
 import Meta from 'vue-meta'
 import routes from './routes'
 import Router from 'vue-router'
@@ -9,11 +9,12 @@ Vue.use(Meta)
 Vue.use(Router)
 
 // The middleware for every page of the application.
-const globalMiddleware = ['locale', 'check-auth']
+// const globalMiddleware = ['locale', 'check-auth']
+const globalMiddleware = []
 
 // Load middleware modules dynamically.
 const routeMiddleware = resolveMiddleware(
-  require.context('~/middleware', false, /.*\.js$/)
+  require.context('@/middleware', false, /.*\.js$/)
 )
 
 const router = createRouter()
