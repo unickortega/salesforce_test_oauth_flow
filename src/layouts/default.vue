@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container mt-4" style="min-height: 100vh;">
+    <div>
       <child/>
     </div>
   </div>

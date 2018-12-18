@@ -1,17 +1,9 @@
 <template>
   <div id="app">
-++++++++++++++++++++++++
     <loading ref="loading"/>
     <transition name="page" mode="out-in">
       <component v-if="layout" :is="layout"/>
     </transition>
-++++++++++++++++++++++++
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div> -->
-    <router-view />
-++++++++++++++++++++++++
   </div>
 </template>
 
@@ -84,18 +76,3 @@ export default{
   }
   
 </style>
-
-<script>
-  import 'bootstrap/dist/css/bootstrap.css'
-  import 'bootstrap-vue/dist/bootstrap-vue.css'
-  import topPage from '../src/components/Top'
-  import TimeManagement from '../src/components/TimeManagement'
-
-
-  export default {
-    components: {
-      topPage,
-      TimeManagement
-    },
-  }
-</script>

@@ -60,7 +60,7 @@ async function beforeEach (to, from, next) {
 
   // Start the loading bar.
   if (components[components.length - 1].loading !== false) {
-    router.app.$nextTick(() => router.app.$loading.start())
+    router.app.$nextTick(() => router.app.$refs.loading.start())
   }
 
   // Get the middleware for all the matched components.
@@ -87,7 +87,7 @@ async function beforeEach (to, from, next) {
 async function afterEach (to, from, next) {
   await router.app.$nextTick()
 
-  router.app.$loading.finish()
+  router.app.$refs.loading.finish()
 }
 
 /**
