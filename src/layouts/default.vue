@@ -71,7 +71,7 @@ import Child from '@/components/Child'
 import Navbar from '@/components/Navbar'
 import Sidebar from '@/components/Sidebar'
 export default {
-  name: 'MainLayout',
+  name: 'default',
 
   components: {
     Child,

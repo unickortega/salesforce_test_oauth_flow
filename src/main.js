@@ -20,6 +20,8 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.config.productionTip = false
 Vue.use(BootstrapVue);
 
+Window.jQuery = require('jquery')
+
 require('@/components/')
   
 new Vue({

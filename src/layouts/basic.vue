@@ -5,9 +5,12 @@
 </template>
 
 <script>
+import Child from '@/components/Child'
+
 export default {
-  name: 'BasicLayout',
+  name: 'basic',
   components: {
+    Child
   }
 }
 </script>

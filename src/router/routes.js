@@ -1,6 +1,7 @@
 import Top from '@/views/Top'
 import TimeManagement from '@/views/TimeManagement'
 import ProjectManagement from '@/views/ProjectManagement'
+import Login from '@/views/auth/Login'
 
 export default [
   {
@@ -25,6 +26,6 @@ export default [
   {
     path: '/login',
     name: 'login',
-    component: () => import('@/views/auth/Login.vue')
+    component: Login
   },
 ]

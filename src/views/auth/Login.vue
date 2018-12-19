@@ -33,23 +33,30 @@
 import Form from 'vform'
 
 export default {
-  name: 'login',
+  layout: 'basic',
   data: () => ({
     form: new Form({
+      client_id: '3MVG9YDQS5WtC11rAIreSjSMojy_L40B.qsCkltEsSlOFVV.uHoHWP_A.NqGvYcJhGl9hAgCMzZDQ9tc74.JA',
+      client_secret: '4460896915616037071',
+      grant_type: 'password',
       email: '',
       password: '',
       remember: false,
       })
   }),
   methods: {
-    login(){
-      // 
-      console.log(this.form)
+    async login(){
+      const {data} = await this.form.submit('post','https://brave-hawk-8s67f3-dev-ed.lightning.force.com/services/oauth2/token',{
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }
+      })
+      console.log(data)
     }
   },
   metaInfo: {
     // if no subcomponents specify a metaInfo.title, this title will be used
-    title: 'Default Title',
+    title: 'Login',
   }
 }
 </script>

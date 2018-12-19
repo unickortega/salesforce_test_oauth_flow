@@ -50,25 +50,3 @@ export default{
   }
 }
 </script>
-
-<style lang="scss">
-  #prof_img {
-    height: 50px;
-    width: 50px;
-  }
-
-  body {
-    background-color: #f8f9fa !important;
-  }
-
-  .card-header {
-    background-color: #f8f9fa;
-  }
-
-  .card-body {
-    border-right: 1px solid rgba(0, 0, 0, 0.125);
-    border-left: 1px solid rgba(0, 0, 0, 0.125);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-  }
-  
-</style>

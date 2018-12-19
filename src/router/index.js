@@ -68,8 +68,8 @@ async function beforeEach (to, from, next) {
 
   // Call each middleware.
   callMiddleware(middleware, to, from, async (...args) => {
-
     if (args.length === 0) {
+      console.log(components[0])
       router.app.setLayout(components[0].layout || '')
     }
 
