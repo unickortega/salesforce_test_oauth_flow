@@ -61,10 +61,6 @@ export default{
     background-color: #f8f9fa !important;
   }
 
-  .card {
-    border: none;
-  }
-
   .card-header {
     background-color: #f8f9fa;
   }

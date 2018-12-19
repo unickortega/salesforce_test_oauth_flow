@@ -10,6 +10,7 @@
 <script>
 // https://github.com/nuxt/nuxt.js/blob/master/lib/app/components/nuxt-loading.vue
 export default {
+  name: 'Loading',
   data: () => ({
     percent: 0,
     show: false,

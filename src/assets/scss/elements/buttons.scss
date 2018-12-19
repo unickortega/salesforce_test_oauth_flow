@@ -1,0 +1,9 @@
+.green-button{
+  background-color: $sub-1!important;
+  border-color: #838f8f;
+
+  &:focus, &:active{
+    box-shadow: 0 0 0 0.2rem rgba(38, 159, 154, 0.45);
+    outline: none;
+  }
+}
