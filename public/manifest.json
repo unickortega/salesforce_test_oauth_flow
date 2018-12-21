@@ -1,6 +1,6 @@
 {
-  "name": "geechs_dashboard",
-  "short_name": "geechs_dashboard",
+  "name": "geechs",
+  "short_name": "geechs",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",

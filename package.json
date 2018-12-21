@@ -1,5 +1,5 @@
 {
-  "name": "geechs_dashboard",
+  "name": "geechs",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -47,7 +47,7 @@
     },
     "extends": [
       "plugin:vue/essential",
-      "@vue/prettier"
+      "eslint:recommended"
     ],
     "rules": {},
     "parserOptions": {

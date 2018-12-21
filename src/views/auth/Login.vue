@@ -46,11 +46,7 @@ export default {
   }),
   methods: {
     async login(){
-      const {data} = await this.form.submit('post','https://brave-hawk-8s67f3-dev-ed.lightning.force.com/services/oauth2/token',{
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        }
-      })
+      const {data} = await this.form.post('https://login.salesforce.com/services/oauth2/token')
       console.log(data)
     }
   },
